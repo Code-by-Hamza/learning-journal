@@ -1,5 +1,91 @@
-html, 
+/* Theme */
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #334155;
+}
+
 body {
-    margin: 0;
+    padding: 1em;
+    align-items: center;
     padding: 0;
+    margin: 0;
+    font-family: "Source Sans 3", sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-width: 400px;
+}
+
+
+/* *Header */
+header {
+    background-color: var(--bg-card);
+    align-items: center;
+    gap: .3125em;
+    cursor: default;
+    padding: 0 .3125em;
+}
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.menu-btn:hover, .menu-btn:focus {
+    color: var(--accent);
+}
+.nav-bar {
+    margin-left: auto;
+}
+.icon {
+    font-size: 2rem;
+}
+.fa-code {
+    color: var(--accent);
+}
+h1 {
+    margin: .75rem 0;
+}
+
+.menu-container {
+background-color: var(--bg-main);
+    position: fixed;
+    top:0;
+    right:50;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+}
+ul{
+    list-style-type: none;
+    padding: .625em 1em;
+    margin: 0;
+    font-weight: 800;
+}
+
+a {
+    color: var(--text-main);
+}
+a:hover {
+    color: var(--accent);
+}
+
+
+
+
+
+
+
+
+
+
+/* Utility */
+.flex {
+    display: flex;
+}
+
+.hidden {
+    display: none;
 }
