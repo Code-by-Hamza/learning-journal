@@ -1,7 +1,7 @@
 /* Theme */
 :root {
     --bg-main: #0f172a;
-    --bg-card: #1e293b;
+    --bg-card: #192c4d;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --accent: #38bdf8;
@@ -19,23 +19,23 @@ body {
     min-width: 400px;
 }
 
-
 /* *Header */
 header {
     font-family: "Roboto", sans-serif;
     background-color: var(--bg-card);
     align-items: center;
-    gap: .3125em;
+    gap: 0.3125em;
     cursor: default;
-    padding: 0 .3125em;
+    padding: 0 0.3125em;
 }
 .menu-btn {
     background: transparent;
     border: none;
-    color: white;
+    color: var(--text-main);
     cursor: pointer;
 }
-.menu-btn:hover, .menu-btn:focus {
+.menu-btn:hover,
+.menu-btn:focus {
     color: var(--accent);
 }
 .nav-bar {
@@ -48,22 +48,26 @@ header {
     color: var(--accent);
 }
 h1 {
-    margin: .75rem 0;
+    margin: 0.75rem 0;
 }
 
 .menu-container {
-background-color: var(--bg-main);
+    background-color: var(--bg-main);
     position: fixed;
-    top:0;
-    right:50;
+    top: 0;
+    right: 50;
     border-radius: 10px;
     border: 2px solid var(--border);
 }
-ul{
+ul {
     list-style-type: none;
-    padding: .625em 1em;
+    padding: 0.625em 1em;
     margin: 0;
     font-weight: 800;
+}
+
+li:not(:first-child) {
+  margin-top: .5em;
 }
 
 a {
@@ -74,11 +78,11 @@ a:hover {
 }
 
 /* *footer */
-footer{
+footer {
     background-color: var(--bg-card);
     text-align: center;
     padding: 1.25em 0;
-    grid-area: foot;
+    margin-top: 1.25em;
 }
 footer h2 {
     margin: 0;
@@ -88,14 +92,64 @@ footer span {
     font-size: 0.7rem;
 }
 
-
-
-main {
-    grid-area: main;
+/* *Hero section */
+.hero-container {
+    background-image: url("/images/article-image.png");
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 1.5rem;
 }
 
+.hero {
+    flex-direction: column;
+    height: 95%;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+.hero h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    padding: 15px 0;
+}
 
+/* *blog section */
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
+.blog-sec {
+    background-color: var(--bg-card);
+    flex-direction: column;
+    margin: 0.625em;
+    border-radius: 10px;
+    border: 3px solid var(--border);
+}
+.blog-img {
+    height: 250px;
+}
+span {
+    display: block;
+    color: var(--text-muted);
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--text-main);
+}
+
+img {
+    width: 100%;
+}
+
+p,
+h2,
+span {
+    margin: 0;
+    padding: 0 0.3125rem;
+}
 
 /* Utility */
 .flex {
