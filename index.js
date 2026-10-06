@@ -12,7 +12,7 @@ document.addEventListener("click", (e) => {
         handleBlogClicks(e.target.dataset.blog);
     } else if (e.target.id === "home-btn") {
         renderHomePage();
-    } 
+    }
 });
 
 function handleBlogClicks(blogId) {
