@@ -1,11 +1,12 @@
 /* Theme */
 :root {
-    --bg-main: #0f172a;
-    --bg-card: #192c4d;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent: #38bdf8;
-    --border: #334155;
+    --bg-main: #06110d;
+    --bg-card: #0c1f17;
+    --text-main: #f0fdf4;
+    --text-muted: #86efac;
+    --accent: #22c55e;
+    --accent-gold: #eab308;
+    --border: #143527;
     --max-width: 1024px;
 }
 
@@ -60,8 +61,8 @@ h1 {
     font-size: 1.5rem;
 }
 
-.fa-code {
-    color: var(--accent);
+.fa-crown {
+    color: var(--accent-gold);
 }
 
 .menu-btn {
