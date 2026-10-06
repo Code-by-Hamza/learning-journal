@@ -1,82 +1,92 @@
-import { blogData } from "./data.js";
-import { heroData } from "./data.js";
-import { aboutHtml } from "./data.js";
+import { blogData, heroData, aboutHtml } from "./data.js";
+
+const mainContainer = document.getElementById("main-container");
+const menuContainer = document.getElementById("menu-container");
 
 renderHomePage();
 
 document.addEventListener("click", (e) => {
-    if (e.target.closest(".menu-btn")) {
-        toggleDisplay("menu-container");
-    } else if (e.target.dataset.blog) {
-        handleBlogClicks(e.target.dataset.blog);
+    const blogCard = e.target.closest("[data-blog]");
+    const isMenuBtn = e.target.closest(".menu-btn");
+
+    if (isMenuBtn) {
+        menuContainer.classList.toggle("hidden");
+        return;
+    }
+
+    if (
+        !menuContainer.contains(e.target) &&
+        !menuContainer.classList.contains("hidden")
+    ) {
+        menuContainer.classList.add("hidden");
+    }
+
+    if (blogCard) {
+        handleBlogClicks(blogCard.dataset.blog);
     } else if (e.target.id === "home-btn") {
-        toggleDisplay("menu-container");
         renderHomePage();
     } else if (e.target.id === "about-btn") {
-        toggleDisplay("menu-container");
         renderAboutPage();
     }
 });
 
 function renderAboutPage() {
-    document.getElementById("main-container").innerHTML = aboutHtml;
+    mainContainer.innerHTML = aboutHtml;
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function handleBlogClicks(blogId) {
-    const fullPostObj = blogData.find((blog) => blog.id === Number(blogId))
-        ? blogData.find((blog) => blog.id === Number(blogId))
-        : heroData;
+    const id = Number(blogId);
+    const post = id === 0 ? heroData : blogData.find((b) => b.id === id);
 
-    const mainContainer = document.getElementById("main-container");
+    if (!post) return;
+
     mainContainer.innerHTML = `
-    <article class="post-container">
-        <span class="post-date">${fullPostObj.date}</span>
-        <h1 class="post-title">${fullPostObj.title}</h1>
-        <p class="post-summary">${fullPostObj.summary}</p>
-        <img class="post-img" src="${fullPostObj.img}" alt="${fullPostObj.alt || ""}"/>
-        <div class="post-body">${fullPostObj.body}</div>
-    </article>
+        <article class="post-container">
+            <span class="post-date">${post.date}</span>
+            <h1 class="post-title">${post.title}</h1>
+            <p class="post-summary">${post.summary}</p>
+            <img class="post-img" src="${post.img}" alt="${post.alt || ""}"/>
+            <div class="post-body">${post.body}</div>
+        </article>
     `;
-}
-
-function toggleDisplay(id) {
-    document.getElementById(id).classList.toggle("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function renderHeroSection() {
     document.querySelector("#hero-section").innerHTML = `
-                <section class="hero-container" >
-                <div class="hero flex" data-blog="${heroData.id}">
+        <section class="hero-container" data-blog="${heroData.id}">
+            <div class="hero flex">
                 <span>${heroData.date}</span>
-                <h2 data-blog="${heroData.id}">${heroData.title}</h2>
-                <p data-blog="${heroData.id}">${heroData.summary}</p>
-                </div>
-                </section>
-                `;
+                <h2>${heroData.title}</h2>
+                <p>${heroData.summary}</p>
+            </div>
+        </section>
+    `;
 }
 
 function getBlogsHtml() {
-    let blogsHtml = "";
     const blogContainer = document.querySelector(".blog-container");
-    blogsHtml = blogData
-        .map((blog) => {
-            return `<section class="blog-sec flex" >
-                    <img src="${blog.img}" class="blog-img" data-blog="${blog.id}" />
-                    <span>${blog.date}</span>
-                    <h2 data-blog="${blog.id}">${blog.title}</h2>
-                    <p data-blog="${blog.id}">${blog.summary}</p>
-                    </section>
-                    `;
-        })
+    blogContainer.innerHTML = blogData
+        .map(
+            (blog) => `
+            <section class="blog-sec flex" data-blog="${blog.id}">
+                <img src="${blog.img}" class="blog-img" alt="${blog.alt || ""}" />
+                <span>${blog.date}</span>
+                <h2>${blog.title}</h2>
+                <p>${blog.summary}</p>
+            </section>
+        `,
+        )
         .join("");
-    blogContainer.innerHTML = blogsHtml;
 }
 
 function renderHomePage() {
-    document.getElementById("main-container").innerHTML =
-        `<div id="hero-section"></div>
-            <div class="blog-container"></div>`;
-
+    mainContainer.innerHTML = `
+        <div id="hero-section"></div>
+        <div class="blog-container"></div>
+    `;
     renderHeroSection();
     getBlogsHtml();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
