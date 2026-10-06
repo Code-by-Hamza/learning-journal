@@ -3,7 +3,7 @@ import { blogData, heroData, aboutHtml } from "./data.js";
 const mainContainer = document.getElementById("main-container");
 const menuContainer = document.getElementById("menu-container");
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 6 ;
 let visibleCount = POSTS_PER_PAGE;
 
 renderHomePage();
@@ -30,9 +30,11 @@ document.addEventListener("click", (e) => {
     } else if (blogCard) {
         handleBlogClicks(blogCard.dataset.blog);
     } else if (e.target.id === "home-btn") {
+        menuContainer.classList.toggle("hidden");
         visibleCount = POSTS_PER_PAGE;
         renderHomePage();
     } else if (e.target.id === "about-btn") {
+        menuContainer.classList.toggle("hidden");
         renderAboutPage();
     }
 });
