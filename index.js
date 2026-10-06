@@ -2,9 +2,7 @@ import { blogData } from "./data.js";
 import { heroData } from "./data.js";
 import { aboutHtml } from "./data.js";
 
-
 renderHomePage();
-
 
 document.addEventListener("click", (e) => {
     if (e.target.closest(".menu-btn")) {
@@ -12,16 +10,15 @@ document.addEventListener("click", (e) => {
     } else if (e.target.dataset.blog) {
         handleBlogClicks(e.target.dataset.blog);
     } else if (e.target.id === "home-btn") {
-        toggleDisplay("menu-container")
+        toggleDisplay("menu-container");
         renderHomePage();
-    } else if (e.target.id === 'about-btn'){
-        toggleDisplay("menu-container")
-        renderAboutPage()
+    } else if (e.target.id === "about-btn") {
+        toggleDisplay("menu-container");
+        renderAboutPage();
     }
 });
 
-
-function renderAboutPage(){
+function renderAboutPage() {
     document.getElementById("main-container").innerHTML = aboutHtml;
 }
 
@@ -32,11 +29,13 @@ function handleBlogClicks(blogId) {
 
     const mainContainer = document.getElementById("main-container");
     mainContainer.innerHTML = `
-    <span>${fullPostObj.date}</span>
-    <h2>${fullPostObj.title}</h2>
-    <p>${fullPostObj.summary}</p>
-    <img src="${fullPostObj.img}"/>
-    <div>${fullPostObj.body}</div>
+    <article class="post-container">
+        <span class="post-date">${fullPostObj.date}</span>
+        <h1 class="post-title">${fullPostObj.title}</h1>
+        <p class="post-summary">${fullPostObj.summary}</p>
+        <img class="post-img" src="${fullPostObj.img}" alt="${fullPostObj.alt || ""}"/>
+        <div class="post-body">${fullPostObj.body}</div>
+    </article>
     `;
 }
 
