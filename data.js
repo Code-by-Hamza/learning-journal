@@ -1,7 +1,7 @@
 export const heroData = {
     id: 0,
-    title: "For You. For All of Us: The Burden of the Throne at the End of Time.",
-    img: "",
+    title: "For You. For All of Us<br>The Burden of the Throne at the End of Time.",
+    img: "images/loki.jpg",
     alt: "Loki seated upon the throne at the Citadel, gathering green glowing branches of the multiverse",
     date: "THE END OF TIME // ETERNITY",
     summary:
@@ -23,7 +23,7 @@ export const blogData = [
     {
         id: 1,
         title: "The Shadow of the Golden Child",
-        img: "",
+        img: "images/blog-1.webp",
         alt: "Young Loki standing in the shadows of the Asgardian palace while Thor is praised",
         date: "ASGARD // PRE-BANISHMENT",
         summary:
@@ -37,7 +37,7 @@ export const blogData = [
     {
         id: 2,
         title: "Cold Truth in the Vault",
-        img: "",
+        img: "images/blog-2.webp",
         alt: "Loki holding the Casket of Ancient Winters as his skin turns Frost Giant blue",
         date: "JOTUNHEIM // THE REVELATION",
         summary:
@@ -51,7 +51,7 @@ export const blogData = [
     {
         id: 3,
         title: "Glorious Purpose and Earth's Ruin",
-        img: "",
+        img: "images/blog-3.webp",
         alt: "Loki wielding the Chitauri scepter overlooking New York City",
         date: "MIDGARD // 2012",
         summary:
@@ -65,7 +65,7 @@ export const blogData = [
     {
         id: 4,
         title: "Frigga's Son, After All",
-        img: "",
+        img: "images/blog-4.webp",
         alt: "Loki sitting in the Asgardian dungeon, clothes torn and cell trashed in grief",
         date: "ASGARD DUNGEONS // THE INVASION",
         summary:
@@ -79,7 +79,7 @@ export const blogData = [
     {
         id: 5,
         title: "The Sun Will Shine on Us Again",
-        img: "",
+        img: "images/blog-5.webp",
         alt: "Loki facing Thanos aboard the Statesman with a small dagger",
         date: "STATESMAN // SANCTUARY II",
         summary:
@@ -93,7 +93,7 @@ export const blogData = [
     {
         id: 6,
         title: "A Cog in the Bureaucratic Machine",
-        img: "",
+        img: "images/blog-6.webp",
         alt: "Loki staring in shock at an office desk drawer filled with Infinity Stones",
         date: "TVA HEADQUARTERS // NULL-TIME",
         summary:
@@ -107,7 +107,7 @@ export const blogData = [
     {
         id: 7,
         title: "Sylvie and the Mirrors of Myself",
-        img: "",
+        img: "images/blog-7.webp",
         alt: "Loki and Sylvie sitting against a ruined vehicle on Lamentis-1 under a falling moon",
         date: "LAMENTIS-1 // THE APOCALYPSE",
         summary:
@@ -121,7 +121,7 @@ export const blogData = [
     {
         id: 8,
         title: "Mastering the Timeslip",
-        img: "",
+        img: "images/blog-8.webp",
         alt: "Loki violently warping through space and time across different eras of the TVA",
         date: "TVA ARCHIVES // CENTURIES OF STUDY",
         summary:
@@ -136,7 +136,7 @@ export const blogData = [
 
 export const aboutHtml = `
     <article class="about-container">
-        <img src="" class="about-img" alt="Loki, God of Stories, glowing with emerald temporal magic" />
+        <img src="images/user-avatar.png" class="about-img" alt="Loki, God of Stories, glowing with emerald temporal magic" />
         <h1>I am Loki. And I hold the stories together.</h1>
         <p>
             I have worn countless masks: Prince of Asgard, Jotun outcast, God of Mischief, villain of Midgard, prisoner, and fugitive across broken timelines. For millennia, I believed my burden was to sit upon a throne and force the cosmos to witness my glory.

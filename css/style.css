@@ -120,8 +120,11 @@ li:not(:first-child) {
 
 /* Hero Section */
 .hero-container {
-    background: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.9)),
-                url("/images/article-image.png") center/cover no-repeat;
+    background: linear-gradient(
+                    rgba(6, 17, 13, 0.35), 
+                    rgba(6, 17, 13, 0.95)
+                ),
+                url("/images/loki.jpg") center/cover no-repeat;
     width: 100%;
     min-height: 40vh;
     display: flex;
@@ -148,13 +151,14 @@ li:not(:first-child) {
 .hero h2 {
     font-size: 1.85rem;
     line-height: 1.25;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 ;
 }
 
 .hero p {
     color: var(--text-muted);
     font-size: 1rem;
     max-width: 650px;
+    margin: 0;
 }
 
 /* Blog List Grid */
@@ -183,7 +187,7 @@ li:not(:first-child) {
 }
 
 .blog-img {
-    height: 200px;
+    height: 280px;
     object-fit: cover;
 }
 
@@ -262,8 +266,8 @@ li:not(:first-child) {
 }
 
 .about-img {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent);
