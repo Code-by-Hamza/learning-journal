@@ -16,7 +16,6 @@ body {
     font-family: "Source Sans 3", sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
-    min-width: 400px;
 }
 
 /* *Header */
@@ -151,9 +150,14 @@ span {
     padding: 0 0.3125rem;
 }
 
-
-
-/* *main */
+.about-container {
+    padding: 1.25rem;
+}
+.about-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
 
 
 /* Utility */
