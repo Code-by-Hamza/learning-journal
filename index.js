@@ -3,6 +3,9 @@ import { blogData, heroData, aboutHtml } from "./data.js";
 const mainContainer = document.getElementById("main-container");
 const menuContainer = document.getElementById("menu-container");
 
+const POSTS_PER_PAGE = 6;
+let visibleCount = POSTS_PER_PAGE;
+
 renderHomePage();
 
 document.addEventListener("click", (e) => {
@@ -21,9 +24,13 @@ document.addEventListener("click", (e) => {
         menuContainer.classList.add("hidden");
     }
 
-    if (blogCard) {
+    if (e.target.id === "load-more-btn") {
+        visibleCount += 3;
+        renderBlogList();
+    } else if (blogCard) {
         handleBlogClicks(blogCard.dataset.blog);
     } else if (e.target.id === "home-btn") {
+        visibleCount = POSTS_PER_PAGE;
         renderHomePage();
     } else if (e.target.id === "about-btn") {
         renderAboutPage();
@@ -65,9 +72,13 @@ function renderHeroSection() {
     `;
 }
 
-function getBlogsHtml() {
+function renderBlogList() {
     const blogContainer = document.querySelector(".blog-container");
-    blogContainer.innerHTML = blogData
+    const loadMoreBtn = document.getElementById("load-more-btn");
+
+    const visiblePosts = blogData.slice(0, visibleCount);
+
+    blogContainer.innerHTML = visiblePosts
         .map(
             (blog) => `
             <section class="blog-sec flex" data-blog="${blog.id}">
@@ -79,14 +90,23 @@ function getBlogsHtml() {
         `,
         )
         .join("");
+
+    if (visibleCount >= blogData.length) {
+        loadMoreBtn.classList.add("hidden");
+    } else {
+        loadMoreBtn.classList.remove("hidden");
+    }
 }
 
 function renderHomePage() {
     mainContainer.innerHTML = `
         <div id="hero-section"></div>
         <div class="blog-container"></div>
+        <div class="load-more-container">
+            <button id="load-more-btn" class="load-more-btn">Load More</button>
+        </div>
     `;
     renderHeroSection();
-    getBlogsHtml();
+    renderBlogList();
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
