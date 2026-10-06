@@ -1,5 +1,5 @@
 export const heroData = {
-    id: 1,
+    id: 0,
     title: "My new journey as a bootcamp student.",
     img: "/images/article-image.png",
     alt: "sunset",
