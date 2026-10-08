@@ -1,17 +1,18 @@
-# Loki Chronicles
+# Loki's Journal
 
-A simple Star Wars blog-style website built with HTML, CSS and JavaScript.
+A Loki-themed journal website built with HTML, CSS and JavaScript. It presents Loki's story through a collection of journal-style posts covering his journey from Asgard to the TVA and the End of Time.
 
-![Loki Chronicles](images/screenshot.png)
+![Loki's Journal](images/screenshot.png)
 
 ## Features
 
-- Hero blog post
-- Blog post cards
-- Individual blog posts
+- Hero journal entry about Loki's life at the End of Time
+- Journal posts covering key moments from Loki's story
+- Open individual posts to read the full entry
 - Load more posts
 - About page
-- Responsive navigation
+- Mobile navigation menu
+- Responsive blog layout
 
 ## Built With
 
@@ -21,10 +22,10 @@ A simple Star Wars blog-style website built with HTML, CSS and JavaScript.
 
 ## What I Practiced
 
+- Rendering content from JavaScript data
 - DOM manipulation
 - Event delegation
-- Rendering HTML from data
-- Arrays and objects
-- Functions and application state
-- Working with multiple views
-- CSS variables
+- Working with arrays and objects
+- Finding and displaying individual posts
+- Managing UI state
+- Responsive CSS and CSS variables
