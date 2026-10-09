@@ -1,8 +1,8 @@
-# Loki's Journal
+# Loki's Chronicles
 
 A Loki-themed journal website built with HTML, CSS and JavaScript. It presents Loki's story through a collection of journal-style posts covering his journey from Asgard to the TVA and the End of Time.
 
-![Loki's Journal](images/screenshot.png)
+![Loki's Chronicles](images/screenshot.png)
 
 ## Features
 
@@ -19,13 +19,3 @@ A Loki-themed journal website built with HTML, CSS and JavaScript. It presents L
 - HTML
 - CSS
 - JavaScript
-
-## What I Practiced
-
-- Rendering content from JavaScript data
-- DOM manipulation
-- Event delegation
-- Working with arrays and objects
-- Finding and displaying individual posts
-- Managing UI state
-- Responsive CSS and CSS variables
